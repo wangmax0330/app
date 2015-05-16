@@ -9,7 +9,7 @@ var InitiateSimpleDataTable = function () {
                     "aButtons": [
                         "copy", "csv", "xls", "pdf", "print"
                     ],
-                    "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": contextPath+"/res/assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
                     "search": "",
@@ -74,7 +74,7 @@ var InitiateEditableDataTable = function () {
 				            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
 				            "aButtons": ["csv", "xls", "pdf"]
 				        }],
-                    "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": contextPath+"/res/assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
                     "search": "",
@@ -257,7 +257,7 @@ var InitiateExpandableDataTable = function () {
 				            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
 				            "aButtons": ["csv", "xls", "pdf"]
 				        }],
-                    "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": contextPath+"/res/assets/js/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
                     "search": "",
@@ -316,7 +316,7 @@ var InitiateSearchableDataTable = function () {
 				            "sButtonText": "Save <i class=\"fa fa-angle-down\"></i>",
 				            "aButtons": ["csv", "xls", "pdf"]
 				        }],
-                    "sSwfPath": "assets/swf/copy_csv_xls_pdf.swf"
+                    "sSwfPath": contextPath+"/res/assets/swf/copy_csv_xls_pdf.swf"
                 },
                 "language": {
                     "search": "",
