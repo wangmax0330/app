@@ -2,21 +2,17 @@ package com.pikia.componet.controller;
 
 import java.util.Locale;
 
-import javax.annotation.Resource;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-import com.pikia.component.web.service.SessionService;
-
 public abstract class ModelCrudController extends ModelCrudOperator implements
 		ApplicationContextAware {
 	protected final Log logger = LogFactory.getLog(getClass());
-	@Resource
-	protected SessionService sessionService;
+//	@Resource
+//	protected SessionService sessionService;
 	protected ApplicationContext context;
 
 	public void setApplicationContext(ApplicationContext context)

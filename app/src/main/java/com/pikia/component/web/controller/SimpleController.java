@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SimpleController {
 	/**
 	 * 用于映射静态页面
+	 * 
 	 * @param request
 	 * @param response
 	 * @param ftl

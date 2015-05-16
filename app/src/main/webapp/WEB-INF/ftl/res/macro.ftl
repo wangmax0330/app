@@ -3,6 +3,7 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="navbar-container">
+            
                 <!-- Navbar Barnd -->
                 <div class="navbar-header pull-left">
                     <a href="#" class="navbar-brand">
@@ -18,6 +19,8 @@
                     <i class="collapse-icon fa fa-bars"></i>
                 </div>
                 <!-- /Sidebar Collapse -->
+                
+                
                 <!-- Account Area and Settings --->
                 <div class="navbar-header pull-right">
                     <div class="navbar-account">
@@ -292,6 +295,8 @@
                                 <!--/Login Area Dropdown-->
                             </li>
                             <!-- /Account Area -->
+                            
+                            
                             <!--Note: notice that setting div must start right after account area list.
                             no space must be between these elements-->
                             <!-- Settings -->
@@ -327,11 +332,11 @@
     <!-- /Navbar -->
 </#macro>
 
+
+
+
+
 <#macro sidebarPage contextPath>
-	<script>
-	var projectID = '';
-	<!--var userID = '';-->
-	</script>
       <!-- Page Container -->
         <div class="page-container">
             <!-- Page Sidebar -->
@@ -340,14 +345,14 @@
                 <div class="sidebar-header-wrapper">
                     <input type="text" class="searchinput" />
                     <i class="searchicon fa fa-search"></i>
-                    <div class="searchhelper">Search Reports, Charts, Emails or Notifications</div>
+                    <div class="searchhelper">搜索</div>
                 </div>
                 <!-- /Page Sidebar Header -->
                 <!-- Sidebar Menu -->
                 <ul class="nav sidebar-menu">
                     <!--Dashboard-->
                     <li class="active">
-                        <a href="index.html">
+                        <a href="${rc.contextPath}/d/admin/index">
                             <i class="menu-icon glyphicon glyphicon-home"></i>
                             <span class="menu-text"> Dashboard </span>
                         </a>

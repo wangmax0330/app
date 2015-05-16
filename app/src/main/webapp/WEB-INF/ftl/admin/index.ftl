@@ -1,6 +1,6 @@
 <#setting number_format="#">
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8"/>
 <title>我行</title>
@@ -9,15 +9,12 @@
 <#import "../res/macro.ftl" as calendarMacro>
 </head>
 <body>
-
 <!--		loadingPage			-->
 <@calendarMacro.loadingPage contextPath=rc.contextPath />
-
 <!--		Navbar begin		-->
 <@calendarMacro.navbarPage contextPath=rc.contextPath />
 <!--		Navbar end			-->
-
-   <!-- Main Container -->
+<!-- Main Container -->
     <div class="main-container container-fluid">
         <!-- Page Container -->
         <div class="page-container">
@@ -37,6 +34,9 @@
                     </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
+                
+                
+                
                 <!-- Page Header -->
                 <div class="page-header position-relative">
                     <div class="header-title">
@@ -905,10 +905,10 @@
             <!-- /Page Content -->
         </div>
         <!-- /Page Container -->
-        <!-- Main Container -->
+<!-- Main Container -->
         
         
-        
+         <#include "../res/endBase.ftl">
         
          <script>
         // If you want to draw your charts with Theme colors you must run initiating charts after that current skin is loaded
@@ -1064,19 +1064,13 @@
             //------------------------------Real-Time Chart-------------------------------------------//
             var data = [],
                 totalPoints = 300;
-
             function getRandomData() {
-
                 if (data.length > 0)
                     data = data.slice(1);
-
                 // Do a random walk
-
                 while (data.length < totalPoints) {
-
                     var prev = data.length > 0 ? data[data.length - 1] : 50,
                         y = prev + Math.random() * 10 - 5;
-
                     if (y < 0) {
                         y = 0;
                     } else if (y > 100) {
@@ -1085,9 +1079,7 @@
 
                     data.push(y);
                 }
-
                 // Zip the generated y values with the x values
-
                 var res = [];
                 for (var i = 0; i < data.length; ++i) {
                     res.push([i, data[i]]);
@@ -1139,15 +1131,11 @@
             });
 
             function update() {
-
                 plot.setData([getRandomData()]);
-
                 plot.draw();
                 setTimeout(update, updateInterval);
             }
             update();
-
-
             //-------------------------Initiates Easy Pie Chart instances in page--------------------//
             InitiateEasyPieChart.init();
 
