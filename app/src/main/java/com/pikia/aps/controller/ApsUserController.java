@@ -32,6 +32,10 @@ public class ApsUserController {
 		queryContext.setStartIndex((queryContext.getPageIndex() - 1)
 				* queryContext.getPageSize());
 		queryContext.setPageSize(queryContext.getPageSize());
+		
+		
+		System.out.println("SIze:  "+apsUserService.getPagedModelIds(queryContext).size());
+		System.out.println("Total:   "+apsUserService.getTotalCount(queryContext));
 		SortPagedList<ApsUserDomain> pagedList = (SortPagedList<ApsUserDomain>) apsUserService
 				.list(queryContext, ApsUserDomain.class,
 						apsUserService.getPagedModelIds(queryContext),

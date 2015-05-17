@@ -9,7 +9,7 @@ public class ApsUserDomain extends BaseDomain {
 	private String nickName; // 昵称
 	private String realName; // 真实名称
 	private Integer age; // 年龄
-	private Date birthDay;
+	private Date birthday;
 	private Double amount; // 积分
 	private String ip; // IP地址
 	private String mobile; // 手机号码
@@ -80,12 +80,13 @@ public class ApsUserDomain extends BaseDomain {
 		this.age = age;
 	}
 
-	public Date getBirthDay() {
-		return birthDay;
+
+	public Date getBirthday() {
+		return birthday;
 	}
 
-	public void setBirthDay(Date birthDay) {
-		this.birthDay = birthDay;
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 
 	public Double getAmount() {

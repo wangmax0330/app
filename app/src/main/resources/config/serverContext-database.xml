@@ -10,7 +10,7 @@
 	
 	<bean id="baseDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://127.0.0.1:3306/app2?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=utf-8&amp;useOldAliasMetadataBehavior=true"/>
+		<property name="url" value="jdbc:mysql://127.0.0.1:3306/app?useUnicode=true&amp;autoReconnect=true&amp;characterEncoding=utf-8&amp;useOldAliasMetadataBehavior=true"/>
 		<property name="username" value="root"/>
 		<property name="password" value="123456"/>
 		<!--initialSize: 初始化连接--> 

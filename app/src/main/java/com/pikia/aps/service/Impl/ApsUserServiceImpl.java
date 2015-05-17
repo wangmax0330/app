@@ -46,14 +46,14 @@ public class ApsUserServiceImpl extends ModelCrudServiceSupport implements
 
 	@Override
 	public int getTotalCount(PaginationQueryContext queryContext) {
-		// TODO Auto-generated method stub
-		return 0;
+		return apsUserRepository.getTotalCount(null);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = true, rollbackFor = Exception.class)
 	public Object getModel(Long id) {
-		return null;
+		ApsUserDomain  userDomain=this.apsUserRepository.get(id);
+		return userDomain;
 	}
 
 	@Override
@@ -64,7 +64,9 @@ public class ApsUserServiceImpl extends ModelCrudServiceSupport implements
 	@Override
 	public String getJsonList(List<ApsUserDomain> userList) {
 		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+		
 		for (ApsUserDomain tmp : userList) {
+			System.out.println(tmp);
 			list.add(getJson(tmp));
 		}
 		return JsonUtils.JSON_List2String(list);
@@ -76,11 +78,14 @@ public class ApsUserServiceImpl extends ModelCrudServiceSupport implements
 		jsonMap.put("nickName", tmp.getNickName());
 		jsonMap.put("mobile", tmp.getMobile());
 		jsonMap.put("email", tmp.getEmail());
-		if (tmp.getMachineCode().length() > 30) {
-			jsonMap.put("subMachineCode", tmp.getMachineCode().substring(0, 20)
-					+ "...");
+		if(StringUtils.isNotBlank(tmp.getMachineCode())){
+			if (tmp.getMachineCode().length() > 30) {
+				jsonMap.put("subMachineCode", tmp.getMachineCode().substring(0, 20)
+						+ "...");
+			}
 		}
 		jsonMap.put("machineCode", tmp.getMachineCode());
+		
 		jsonMap.put("appVersion", tmp.getAppVersion());
 		jsonMap.put("city", tmp.getCity());
 		jsonMap.put("amount", MathUtils.round(tmp.getAmount(), 1));

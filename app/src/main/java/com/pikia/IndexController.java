@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -20,9 +19,18 @@ public class IndexController {
 	
 	@RequestMapping(value = "/admin/index", method = { RequestMethod.POST, RequestMethod.GET })
     public String adminIndexPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        System.out.println("-----------------");
 		return "/admin/index";
     }
+	
+	@RequestMapping(value="/task/index",method={RequestMethod.POST,RequestMethod.GET})
+	public String taskIndexPage(HttpServletRequest request,HttpServletResponse response){
+		return "/task/index";
+	}
+	
+	@RequestMapping(value="/schedule/index",method={RequestMethod.POST,RequestMethod.GET})
+	public String scheduleIndexPage(HttpServletRequest request,HttpServletResponse response){
+		return "/schedule/index";
+	}
 	
 	@RequestMapping(value = "/login", method = { RequestMethod.POST, RequestMethod.GET })
     public String userLoginPagex(HttpServletRequest request, HttpServletResponse response) throws Exception {

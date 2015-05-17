@@ -11,7 +11,7 @@ public class ApsUserSqlProvider {
 		SelectBuilder.SELECT("U.ID");
 		SelectBuilder.FROM("APS_USER U");
 		SelectBuilder.WHERE(" U.DELFLAG !=1 ");
-		SelectBuilder.ORDER_BY(" t.CREATE_TIME DESC");
+		SelectBuilder.ORDER_BY(" U.CREATE_TIME DESC");
 		String sql = SelectBuilder.SQL();
 		return sql + "  limit #{startIndex},#{pageSize}";
 	}

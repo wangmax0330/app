@@ -3,11 +3,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta charset="utf-8"/>
-<title>用户管理</title>
+<title>Pikia</title>
 <#include "../res/base.ftl">
 <#import "../res/macro.ftl" as calendarMacro>
 <!--Page Related styles-->
 <link href="${rc.contextPath}/res/assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="${rc.contextPath}/res/assets/js/jquery.ba-hashchange.min.js"></script>
+<script>
+var firstClickMenu = location.hash;
+$(function(){
+  	$(window).hashchange(function() {
+          admin.adminDoHash(location.hash);
+  	});
+});
+</script>
 <script src="${rc.contextPath}/res/js/user/index.js"></script>
 </head>
 <body>
@@ -29,21 +38,22 @@
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
                         <li>
-                            <i class="fa fa-home"></i>
-                            <a href="#">Home</a>
+                            <i class="fa fa-home" onclick="tk.load('${rc.contextPath}/d/page/user.user-list','',tk.menuFocus,[this]);">
+                           	 <a href="#user.user-list">用户管理</a>
+                            </i>
                         </li>
                         <li class="active">Dashboard</li>
                     </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
                 
-                
                 <!-- Page Header -->
                 <div class="page-header position-relative">
                     <div class="header-title">
-                        <h1>
-                            Dashboard
-                        </h1>
+						<div class='goBack' onclick="javascript:history.back(-1);">返回</div>
+						<div class="breadcrumbs sync_icon_div" style="display:none"> <a href="#1"><img src="${rc.contextPath}/res/assets/img/reflesh.gif"></a> </div>
+						<span id="targetFixed" class="target_fixed"></span>
+						<div class="welcome info"><img src="${rc.contextPath}/res/assets/img/icn_alert_info.png"><span style="margin-right: 14px;">欢迎使用，我们将全心全意为您服务！</span></div>
                     </div>
                     <!--Header Buttons-->
                     <div class="header-buttons">
@@ -67,7 +77,7 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <span class="widget-caption">Expandable DataTable</span>
+                                    <span class="widget-caption">用户管理</span>
                                     <div class="widget-buttons">
                                         <a href="#" data-toggle="maximize">
                                             <i class="fa fa-expand"></i>
@@ -80,152 +90,10 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="widget-body">
-                                    <table class="table table-striped table-bordered table-hover" id="expandabledatatable">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 10px;">
-                                                    Name
-                                                </th>
-                                                <th style="width: 10px;">
-                                                    Family
-                                                </th>
-                                                <th>
-                                                    Age
-                                                </th>
-                                                <th>
-                                                    Position
-                                                </th>
-                                                <th>
-                                                   Picture 
-                                                </th>
-                                                <th>Interests</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    Nicolai
-                                                </td>
-                                                <td>
-                                                    Larson
-                                                </td>
-                                                <td>
-                                                    27
-                                                </td>
-                                                <td>
-                                                    Software Manager
-                                                </td>
-                                                <td>
-                                                    Swimming
-                                                </td>
-                                                <td>
-                                                    Nicolai-Larson.jpg
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Divya
-                                                </td>
-                                                <td>
-                                                    Johnson
-                                                </td>
-                                                <td>
-                                                    22
-                                                </td>
-                                                <td>
-                                                    Software Developer
-                                                </td>
-                                                <td>
-                                                    Jugging
-                                                </td>
-                                                <td>
-                                                    divyia.jpg
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Javi
-                                                </td>
-                                                <td>
-                                                    Jimenez
-                                                </td>
-                                                <td>
-                                                    32
-                                                </td>
-                                                <td>
-                                                    Software Developer
-                                                </td>
-                                                <td>
-                                                    Gaming
-                                                </td>
-                                                <td>
-                                                    Javi-Jimenez.jpg
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Osvaldus
-                                                </td>
-                                                <td>
-                                                    Valutis
-                                                </td>
-                                                <td>
-                                                    29
-                                                </td>
-                                                <td>
-                                                    Software Analyst
-                                                </td>
-                                                <td>
-                                                    Swimming,Gaming
-                                                </td>
-                                                <td>
-                                                    Osvaldus-Valutis.jpg
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Lee
-                                                </td>
-                                                <td>
-                                                    Munroe
-                                                </td>
-                                                <td>
-                                                    21
-                                                </td>
-                                                <td>
-                                                    Software Developer
-                                                </td>
-                                                <td>
-                                                    Swimming,Gaming
-                                                </td>
-                                                <td>
-                                                    Lee-Munroe.jpg
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    Sergey
-                                                </td>
-                                                <td>
-                                                    Azovskiy
-                                                </td>
-                                                <td>
-                                                    40
-                                                </td>
-                                                <td>
-                                                    SEO
-                                                </td>
-                                                <td>
-                                                    Napping
-                                                </td>
-                                                <td>
-                                                    Sergey-Azovskiy.jpg
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="widget-body" id="main">
+                                
+                                
+                                
                                 </div>
                             </div>
                         </div>
@@ -239,9 +107,6 @@
         <!-- /Page Container -->
 <!-- Main Container -->
          <#include "../res/endBase.ftl">
-	    <script>
-	        InitiateExpandableDataTable.init();
-	    </script>
 </body>
 </html>
 
