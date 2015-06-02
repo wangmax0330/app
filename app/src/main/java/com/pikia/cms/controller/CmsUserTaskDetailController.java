@@ -3,7 +3,7 @@ package com.pikia.cms.controller;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 
-import com.pikia.componet.controller.ModelCrudController;
+import com.pikia.component.controller.ModelCrudController;
 
 @Controller
 public class CmsUserTaskDetailController extends ModelCrudController {
