@@ -1,28 +1,29 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pikia</groupId>
 	<artifactId>app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	  
+
 	<properties>
 		<project.build.sourceEncoding>
 			UTF-8
-		</project.build.sourceEncoding> 
+		</project.build.sourceEncoding>
 		<spring.version>4.0.6.RELEASE</spring.version>
 	</properties>
-		  
+
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>  
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
 					<compilerVersion>1.6</compilerVersion>
 					<source>1.6</source>
 					<target>1.6</target>
-					<encoding>UTF-8</encoding> 
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -35,9 +36,9 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<dependencies>
-	<!--  Spring begin -->
+		<!-- Spring begin -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
@@ -88,22 +89,22 @@
 			<artifactId>spring-jms</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!--  Spring end-->
-		
+		<!-- Spring end -->
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
-		
-		
+
+
 		<dependency>
-		  <groupId>commons-httpclient</groupId>
-		  <artifactId>commons-httpclient</artifactId>
-		  <version>3.1</version>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>aopalliance</groupId>
 			<artifactId>aopalliance</artifactId>
@@ -126,13 +127,13 @@
 			<artifactId>asm-commons</artifactId>
 			<version>3.3.1</version>
 		</dependency>
-		<!-- Spring  Ioc容器需要:Code生成类库 动态生成二进制字节码,底层基于ASM实现-->
+		<!-- Spring Ioc容器需要:Code生成类库 动态生成二进制字节码,底层基于ASM实现 -->
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		<!-- 一个开源的分析、编辑和创建Java字节码的类库 动态生成二进制字节码,完全是基于Java的API，但其性能相比CGLib、ASM要差一些-->
+		<!-- 一个开源的分析、编辑和创建Java字节码的类库 动态生成二进制字节码,完全是基于Java的API，但其性能相比CGLib、ASM要差一些 -->
 		<dependency>
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
@@ -144,13 +145,13 @@
 			<artifactId>standard</artifactId>
 			<version>1.1.1</version>
 		</dependency>
-		<!--java-image-scaling 开源小工具生成图片缩略图-->
+		<!--java-image-scaling 开源小工具生成图片缩略图 -->
 		<dependency>
 			<groupId>com.mortennobel</groupId>
 			<artifactId>java-image-scaling</artifactId>
 			<version>0.8.5</version>
 		</dependency>
-		<!--bouncycastle   Java平台的开放源码的轻量级密码术包。它支持大量的密码术算法-->
+		<!--bouncycastle Java平台的开放源码的轻量级密码术包。它支持大量的密码术算法 -->
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-jdk16</artifactId>
@@ -158,35 +159,36 @@
 		</dependency>
 		<!-- xStream可以轻易的将Java对象和xml文档相互转换，而且可以修改某个特定的属性和节点名称，而且也支持json的转换 -->
 		<dependency>
-			 <groupId>com.thoughtworks.xstream</groupId>
-			 <artifactId>xstream</artifactId>
-			 <version>1.4.3</version>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.3</version>
 		</dependency>
-		<!-- 开源的JDBC连接池，它实现了数据源和JNDI绑定，支持JDBC3规范和JDBC2的标准扩展;C3P0提供最大空闲时间，DBCP提供最大连接数-->
+		<!-- 开源的JDBC连接池，它实现了数据源和JNDI绑定，支持JDBC3规范和JDBC2的标准扩展;C3P0提供最大空闲时间，DBCP提供最大连接数 -->
 		<dependency>
 			<groupId>c3p0</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>0.9.1.2</version>
 		</dependency>
-		<!--  数据库连接池。是 apache上的一个java 连接池项目，也是tomcat 使用的连接池组件;C3P0提供最大空闲时间，DBCP提供最大连接数-->
+		<!-- 数据库连接池。是 apache上的一个java 连接池项目，也是tomcat 使用的连接池组件;C3P0提供最大空闲时间，DBCP提供最大连接数 -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
-		<!--EZMorph是一个简单的java类库用于将一种对象转换成另外一种对象-->
+		<!--EZMorph是一个简单的java类库用于将一种对象转换成另外一种对象 -->
 		<dependency>
 			<groupId>net.sf.ezmorph</groupId>
 			<artifactId>ezmorph</artifactId>
 			<version>1.0.6</version>
 		</dependency>
-		<!-- 一个高性能、低延迟且简单的框架。Disruptor是一个用于在线程间通信的高效低延时的消息组件,需要学习-->
+		<!-- 一个高性能、低延迟且简单的框架。Disruptor是一个用于在线程间通信的高效低延时的消息组件,需要学习 -->
 		<dependency>
 			<groupId>com.lmax</groupId>
 			<artifactId>disruptor</artifactId>
 			<version>3.2.0</version>
 		</dependency>
-		<!-- EhCache 是一个纯Java的进程内缓存框架，具有快速、精干等特点，种广泛使用的开源Java分布式缓存。主要面向通用缓存,Java EE和轻量级容器。-->
+		<!-- EhCache 是一个纯Java的进程内缓存框架，具有快速、精干等特点，种广泛使用的开源Java分布式缓存。主要面向通用缓存,Java 
+			EE和轻量级容器。 -->
 		<dependency>
 			<groupId>net.sf.ehcache</groupId>
 			<artifactId>ehcache</artifactId>
@@ -233,15 +235,16 @@
 			<artifactId>woodstox-core-lgpl</artifactId>
 			<version>4.1.1</version>
 		</dependency>
-		
+
 		<!-- JTA允许应用程序执行分布式事务处理——在两个或多个网络计算机资源上访问并且更新数据。JDBC驱动程序的JTA支持极大地增强了数据访问能力。 -->
 		<dependency>
 			<groupId>javax.transaction</groupId>
 			<artifactId>jta</artifactId>
 			<version>1.1</version>
 		</dependency>
-		
-		<!-- Jettison is a collection of Java APIs (like STaX and DOM) which read and write JSON. -->
+
+		<!-- Jettison is a collection of Java APIs (like STaX and DOM) which read 
+			and write JSON. -->
 		<dependency>
 			<groupId>org.codehaus.jettison</groupId>
 			<artifactId>jettison</artifactId>
@@ -254,7 +257,7 @@
 			<version>2.4</version>
 			<classifier>jdk13</classifier>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
@@ -271,7 +274,7 @@
 			<artifactId>jboss-logging</artifactId>
 			<version>3.1.0.CR2</version>
 		</dependency>
-		
+
 		<!-- SLF4J是一个用于日志系统的简单Facade，允许最终用户在部署其应用时使用其所希望的日志系统。 -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -285,11 +288,8 @@
 			<version>1.6.6</version>
 		</dependency>
 		<!-- 使用log4j 作为日志框架 -->
-<!-- 		<dependency> 
-		  <groupId>org.slf4j</groupId>
-		  <artifactId>slf4j-log4j12</artifactId>
-		  <version>1.7.6</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.slf4j</groupId> <artifactId>slf4j-log4j12</artifactId> 
+			<version>1.7.6</version> </dependency> -->
 		<!-- 使用log4j 作为日志框架 -->
 		<dependency>
 			<groupId>log4j</groupId>
@@ -301,8 +301,8 @@
 			<artifactId>mail</artifactId>
 			<version>1.4.7</version>
 		</dependency>
-		
-		<!-- ognl标签库 比较灵活-->
+
+		<!-- ognl标签库 比较灵活 -->
 		<dependency>
 			<groupId>ognl</groupId>
 			<artifactId>ognl</artifactId>
@@ -314,7 +314,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.1.2</version>
 		</dependency>
-		<!--  地址重写,隐藏真实的服务器地址 -->
+		<!-- 地址重写,隐藏真实的服务器地址 -->
 		<dependency>
 			<groupId>org.tuckey</groupId>
 			<artifactId>urlrewrite</artifactId>
@@ -353,16 +353,22 @@
 		</dependency>
 		<!-- xml导入导出子支持 -->
 		<dependency>
-		  <groupId>org.apache.poi</groupId>
-		  <artifactId>poi-ooxml-schemas</artifactId>
-		  <version>3.9</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.9</version>
 		</dependency>
-		
+
 		<dependency>
-		  <groupId>org.apache.poi</groupId>
-		  <artifactId>poi-ooxml</artifactId>
-		  <version>3.9</version>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
 		</dependency>
 	</dependencies>
-  
+
 </project>

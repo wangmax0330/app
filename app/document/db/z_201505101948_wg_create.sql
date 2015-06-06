@@ -1,4 +1,5 @@
 CREATE SCHEMA app DEFAULT CHARACTER SET utf8 COLLATE utf8_bin ;
+use app;
  /*- --User----------------------------*/
 CREATE  TABLE APS_USER  (
    ID  BIGINT(20) NOT NULL AUTO_INCREMENT ,
