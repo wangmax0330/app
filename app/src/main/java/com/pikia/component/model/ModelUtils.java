@@ -1,5 +1,7 @@
 package com.pikia.component.model;
 
+import org.springframework.util.Assert;
+
 import com.pikia.component.annotation.Model;
 
 public class ModelUtils {
@@ -27,5 +29,11 @@ public class ModelUtils {
 	}
 
 	return false;
+    }
+
+    public static ModelKey asModelKey(Class<?> modelClass, Object identifier) {
+	Assert.notNull(modelClass, "Parameter 'modelClass' must not be null");
+	Assert.notNull(identifier, "Parameter 'identifier' must not be null");
+	return new ModelKey(modelClass, identifier);
     }
 }
