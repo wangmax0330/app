@@ -50,7 +50,6 @@ public class ModelAwareValuePostProcessor extends ValuePostProcessorSupport impl
 	    injection = new FieldInjection();
 	    Class clazz = modelClass;
 	}
-
     }
 
     protected Object getInjectedObject(Object model, String nameRef, Class<?> injectedType)

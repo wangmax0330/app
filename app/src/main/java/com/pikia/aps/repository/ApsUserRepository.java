@@ -14,7 +14,7 @@ import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.type.JdbcType;
 
 import com.pikia.aps.domain.ApsUserDomain;
-import com.pikia.component.repository.ModelRepository;
+import com.pikia.component.extra.repository.ModelRepository;
 
 public interface ApsUserRepository extends ModelRepository {
     @Select("SELECT * FROM APS_USER WHERE ID=#{uid} AND DELFLAG=0")

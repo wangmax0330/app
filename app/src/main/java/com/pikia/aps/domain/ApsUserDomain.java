@@ -7,21 +7,26 @@ import com.pikia.component.base.BaseDomain;
 public class ApsUserDomain extends BaseDomain {
 
     private String nickName; // 昵称
+    private String mobile; // 手机号码
+    private String password; // 密码
+    private Integer cityId; // 当前所在城市Id
+    private String cityStr; // 当前所在城市
+    private String ip; // IP地址
+    private String machineCode; // 机器码
     private String realName; // 真实名称
+    private String appVersion; // 移动端版本号
+    private String roleTag; // 用户权限标签
+
     private Integer age; // 年龄
     private Date birthday;
     private Double amount; // 积分
-    private String ip; // IP地址
-    private String mobile; // 手机号码
-    private String password; // 密码
     private String email; // 电子邮箱
     private String photo; // 头像
     private Boolean man; //
-    private Integer city; // 所在城市
     private String address; // 地址
-    private String machineCode; // 机器码
-    private Date createTime;
-    private String appVersion;
+    private Date createTime; // 用户注册时间
+    private Date updateTime; // 上一次更新时间
+    private Integer role = 0; // 用户权限: 0 app用户 1 网页用户 2管理员
 
     public ApsUserDomain() {
     }
@@ -53,8 +58,6 @@ public class ApsUserDomain extends BaseDomain {
     public void setCreateTime(Date createTime) {
 	this.createTime = createTime;
     }
-
-    private Integer role = 0; // 用户权限: 0 app用户 1 网页用户 2管理员
 
     public String getNickName() {
 	return nickName;
@@ -144,14 +147,6 @@ public class ApsUserDomain extends BaseDomain {
 	this.man = man;
     }
 
-    public Integer getCity() {
-	return city;
-    }
-
-    public void setCity(Integer city) {
-	this.city = city;
-    }
-
     public String getAddress() {
 	return address;
     }
@@ -174,6 +169,38 @@ public class ApsUserDomain extends BaseDomain {
 
     public void setMachineCode(String machineCode) {
 	this.machineCode = machineCode;
+    }
+
+    public Integer getCityId() {
+	return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+	this.cityId = cityId;
+    }
+
+    public String getCityStr() {
+	return cityStr;
+    }
+
+    public void setCityStr(String cityStr) {
+	this.cityStr = cityStr;
+    }
+
+    public String getRoleTag() {
+	return roleTag;
+    }
+
+    public void setRoleTag(String roleTag) {
+	this.roleTag = roleTag;
+    }
+
+    public Date getUpdateTime() {
+	return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+	this.updateTime = updateTime;
     }
 
 }

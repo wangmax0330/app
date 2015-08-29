@@ -6,9 +6,9 @@ import org.apache.commons.logging.LogFactory;
 public class BaseDomain {
     protected final Log logger = LogFactory.getLog(getClass());
     private Long id;
-    private boolean delflag = false;
-    private boolean modified;
-    private boolean initialized;
+    private boolean delflag = false; // 是否已经删除了
+    private boolean modified; // 是否已经被修改过了
+    private boolean initialized; // 是否已经初始化了
 
     public BaseDomain(Long id) {
 	this.id = id;

@@ -2,7 +2,7 @@ package com.pikia.aps.controller;
 
 import org.springframework.stereotype.Controller;
 
-import com.pikia.component.controller.ModelCrudController;
+import com.pikia.component.extra.controller.ModelCrudController;
 
 @Controller
 public class ApsAddressController extends ModelCrudController {

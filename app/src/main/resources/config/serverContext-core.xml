@@ -10,12 +10,9 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
 	<cache:annotation-driven cache-manager="guavaCacheManager" />
-
 	<context:component-scan base-package="com.pikia" />
-
 	<context:annotation-config />
 	<aop:aspectj-autoproxy />
-
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
 
@@ -96,4 +93,7 @@
 	<!-- <bean id="introduceCreator" class="com.reeham.component.ddd.autoproxy.IntroduceAutoProxyCreator"> 
 		<property name="optimize" value="true"></property> <property name="frozen" 
 		value="true"></property> </bean> -->
+
+
+
 </beans>

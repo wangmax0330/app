@@ -24,7 +24,8 @@ public class DefaultCachingModelContainer extends DefaultModelEnhancer implement
     public DefaultCachingModelContainer(ModelProxyInjection modelProxyInjection,
 	    ModelProxyConfig modelProxyConfig) {
 	super(modelProxyInjection, modelProxyConfig);
-	this.cacheManager = cacheManager;
+	// this.cacheManager = cacheManager;
+	System.out.println(cacheManager.getCache("modelCache"));
 	this.modelCache = cacheManager.getCache("modelCache");
 	if (this.modelCache == null)
 	    throw new IllegalStateException(

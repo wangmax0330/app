@@ -9,7 +9,6 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
-
 	<bean id="uploadAddress" class="com.pikia.cms.util.UploadAddress">
 		<property name="uploadPicPath" value="/home/dev/workspace1/pic/" />
 		<!--property name="uploadPicPath" value="/home/workRoot/uploads/"/ -->

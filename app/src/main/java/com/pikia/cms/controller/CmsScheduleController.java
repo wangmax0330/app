@@ -3,7 +3,7 @@ package com.pikia.cms.controller;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 
-import com.pikia.component.controller.ModelCrudController;
+import com.pikia.component.extra.controller.ModelCrudController;
 
 /**
  * 计划安排的Controller
