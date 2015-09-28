@@ -9,7 +9,9 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
+	<!--cacheManager 选择 -->
 	<cache:annotation-driven cache-manager="guavaCacheManager" />
+
 	<context:component-scan base-package="com.pikia" />
 	<context:annotation-config />
 	<aop:aspectj-autoproxy />
@@ -79,21 +81,9 @@
 		class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter" />
 	<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter" />
 
-	<!-- ehcache <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean" 
-		p:configLocation="classpath:/config/ehcache.xml"/> <bean id="cacheManagerDecorator" 
-		class="com.reeham.component.ddd.cache.decorating.ValueProcessingCacheManagerDecorator"> 
-		<property name="cacheManager"> <bean class="org.springframework.cache.ehcache.EhCacheCacheManager" 
-		p:cacheManager-ref="cacheManagerFactory"/> </property> <property name="valuePostProcessors"> 
-		<list> <bean class="com.reeham.component.ddd.model.cache.ModelAwareValuePostProcessor"> 
-		<property name="supportedCacheNames"> <list> <value>modelCache</value> </list> 
-		</property> <property name="recursiveReinject" value ="false"> </property> 
-		</bean> </list> </property> </bean> ehcache -->
-
-	<!--bean id="paginationEvents" class="com.reeham.component.webbiz.events.PaginationEvents"/> -->
-	<!-- <bean id="introduceCreator" class="com.reeham.component.ddd.autoproxy.IntroduceAutoProxyCreator"> 
-		<property name="optimize" value="true"></property> <property name="frozen" 
-		value="true"></property> </bean> -->
-
-
+<!-- 	<bean id="introduceCreator" class="com.pikia.component.autoproxy.IntroduceAutoProxyCreator">
+		<property name="optimize" value="true"></property>
+		<property name="frozen" value="true"></property>
+	</bean> -->
 
 </beans>

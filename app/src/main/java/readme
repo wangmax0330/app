@@ -1,0 +1,14 @@
+=========该app项目各个package的规划===========
+
+com.pikia.app			移动端接口服务
+
+
+com.pikia.aps			框架基础服务,比如用户权限
+com.pikia.aps.init		框架基础服务,初始化配置
+
+com.pikia.cms			具体业务模型,比如日记,计划安排
+
+
+com.pikia.component		核心框架组件
+
+

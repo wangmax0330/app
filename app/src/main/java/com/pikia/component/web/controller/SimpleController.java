@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class SimpleController {
@@ -26,8 +27,7 @@ public class SimpleController {
 	 */
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = { "/page/{ftl:.*}" }, method = {
-			org.springframework.web.bind.annotation.RequestMethod.POST,
-			org.springframework.web.bind.annotation.RequestMethod.GET })
+			RequestMethod.POST, RequestMethod.GET })
 	public String add(HttpServletRequest request, HttpServletResponse response,
 			@PathVariable("ftl") String ftl, ModelMap modelMap) {
 		Map paramMap = getParameterMap(request);
@@ -37,7 +37,6 @@ public class SimpleController {
 			request.setAttribute((String) entry.getKey(),
 					(String) entry.getValue() + "");
 		}
-
 		if (StringUtils.isNotBlank(ftl)) {
 			return "/" + ftl.replace(".", "/");
 		}
