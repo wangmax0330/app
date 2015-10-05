@@ -1,4 +1,4 @@
-package com.pikia.component.util;
+package com.pikia.component.web.util;
 
 import java.util.List;
 
