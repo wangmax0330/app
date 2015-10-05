@@ -5,23 +5,28 @@
 <title>demo</title>
 <link rel="stylesheet" href="${rc.contextPath}/res/plugin/login/css/register.css" type="text/css" media="screen" />
 <script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery.cookie.js"></script>
+<link rel="stylesheet" href="${rc.contextPath}/assets/js/plugin/powerFloat/powerFloat.css"  />
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/powerFloat/jquery-powerFloat-min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/basic/base64.js"></script>
 <script type="text/javascript" src="${rc.contextPath}/res/plugin/login/js/login.js"></script>
 <script type="text/javascript">
-    var IMAGE_PATH="${rc.contextPath}/res/plugin/login/imgaes";
+	var contextPath = '${rc.contextPath}';
 </script>
 </head>
 <body>
+<div class='loading_wp'>
+	<div>
+		<img src='${rc.contextPath}/assets/images/loading.gif' />
+		<p><span class='colorBlue'>小提示</span>:正在进入后台管理系统!</p>
+	</div>
+</div>
 <div class='signup_container'>
         <#--<form class="signup_form_form" id="signup_form" method="post" action="" data-secure-action="https://www.tumblr.com/login" data-secure-ajax-action="">-->
           <div class="login_form">
                 <h3>用户登录 </h3>
                 <table cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td width="40px">公&nbsp;司:</td>
-                        <td>
-                            <input type="text" readonly=true name="company" value="" class="text" />
-                        </td>
-                    </tr>
                     <tr>
                         <td width="40px">帐&nbsp;号:</td>
                         <td>
@@ -43,7 +48,7 @@
                         <td>&nbsp;</td>
                         <td>
                             <input type="button" class="submit" value='登录' />
-                            <input type="button" style="display:none" class="cancel btn" value='取消' /><span class='loading'><img src="${rc.contextPath}/res/images/reflesh.gif"/>正在登陆...</span></td>
+                            <input type="button" style="display:none" class="cancel btn" value='取消' /><span class='loading'><img src="${rc.contextPath}/assets/images/reflesh.gif"/>正在登陆...</span></td>
                     </tr>
                 </table>
             </div>

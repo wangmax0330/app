@@ -6,11 +6,17 @@
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<script src="${rc.contextPath}/assets/js/jquery-1.5.2.min.js" type="text/javascript"></script>
-<script src="${rc.contextPath}/assets/js/hideshow.js" type="text/javascript"></script>
-<script src="${rc.contextPath}/assets/js/jquery.tablesorter.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="${rc.contextPath}/assets/js/jquery.equalHeight.js"></script>
-	
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery.form.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery.tmpl.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/jquery/jquery.equalHeight.js"></script>
+<link rel="stylesheet" href="${rc.contextPath}/assets/js/plugin/powerFloat/powerFloat.css"  />
+<script type="text/javascript" src="${rc.contextPath}/assets/js/plugin/powerFloat/jquery-powerFloat-min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/basic/hideshow.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/assets/js/basic/basic.js"></script>
+
 <script type="text/javascript">
 	var contextPath = '${rc.contextPath}';
 	var imgContextPath = '';
