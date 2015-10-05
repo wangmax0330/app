@@ -8,6 +8,19 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/classes/config/config.properties</value>
+			</list>
+		</property>
+		<property name="fileEncoding">
+			<value>UTF-8</value>
+		</property>
+	</bean>
+
+
 	<!-- destroy-method="close"的作用是当数据库连接不使用的时候,就把该连接重新放到数据池中,方便下次使用调用. -->
 	<bean id="baseDataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
@@ -28,9 +41,12 @@
 		<property name="removeAbandoned" value="true" />
 		<property name="maxWait" value="30000" />
 		<property name="validationQuery" value="SELECT 1" />
+		<!-- testOnBorrow,testOnReturn,testWhileIdle取得、返回对象和空闲时是否进行验证，检查对象是否有效，默认都为false即不验证 -->
 		<property name="testWhileIdle" value="true" />
 		<property name="testOnBorrow" value="true" />
 	</bean>
+
+
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource">
 			<ref bean="baseDataSource" />
