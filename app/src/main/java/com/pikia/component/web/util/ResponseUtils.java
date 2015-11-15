@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang.StringUtils;
 
 public class ResponseUtils {
+	// paramValues 是传到前台的参数
 	public static void writeJsonSuccessMessage(HttpServletResponse response, String message,
 			String... paramValues) {
 		writeMessage(response, JsonUtils.getJsonResult("1", message, paramValues));
