@@ -3,6 +3,10 @@ package com.pikia.component.pagination;
 import java.util.List;
 
 public class SimplePagedList<T> implements PagedList<T> {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8526809678268511154L;
 	private int pageIndex = 1;
 	private int pageSize = 10;
 	private int totalItemCount = 0;
@@ -12,8 +16,7 @@ public class SimplePagedList<T> implements PagedList<T> {
 
 	}
 
-	public SimplePagedList(int pageIndex, int pageSize, int totalItemCount,
-			List<T> items) {
+	public SimplePagedList(int pageIndex, int pageSize, int totalItemCount, List<T> items) {
 		this.pageIndex = pageIndex;
 		this.pageSize = pageSize;
 		this.totalItemCount = totalItemCount;
@@ -45,7 +48,7 @@ public class SimplePagedList<T> implements PagedList<T> {
 	}
 
 	@Override
-	public List getItems() {
+	public List<T> getItems() {
 		return this.items;
 	}
 

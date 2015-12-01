@@ -74,4 +74,9 @@ public class SystemUserServiceImpl extends ModelCrudServiceSupport implements Sy
 		}
 	}
 
+	@Override
+	public Object get(Long paramLong) {
+		return null;
+	}
+
 }

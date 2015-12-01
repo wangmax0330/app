@@ -6,9 +6,12 @@ import org.apache.commons.lang.StringUtils;
 
 import com.pikia.component.base.BaseDomain;
 
-public class SortPagedList<T> extends SimplePagedList<T> implements
-		PagedList<T> {
+public class SortPagedList<T> extends SimplePagedList<T> implements PagedList<T> {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 770232982268825338L;
 	private String orderField;
 	private String orderType;
 
@@ -59,8 +62,7 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 	public int[] getCurrentPageIndexes() {
 		int min = (getCurrentPageIndex() - 1) / 5 * 5 + 1;
 		int max = (getCurrentPageIndex() - 1) / 5 * 5 + 5;
-		if (max >= getTotalPageCount())
-			max = getTotalPageCount();
+		if (max >= getTotalPageCount()) max = getTotalPageCount();
 
 		int[] pages = new int[max - min + 1];
 		int i = 0;
@@ -76,7 +78,7 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 	public String serialize2Json(final String[] columnFields) {
 		StringBuffer sb = new StringBuffer();
 		sb.append(pageDescription());
-		List items = getItems();
+		List<?> items = getItems();
 		int rowsLen = items.size();
 		for (int idx = 0; idx < rowsLen; idx++) {
 			Object tmp = items.get(idx);
@@ -95,10 +97,8 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 	// 封装成json 格式
 	public StringBuffer pageDescription() {
 		StringBuffer sb = new StringBuffer();
-		sb.append("{\"isSuc\":1,\"pagi\":{\"currPage\":")
-				.append(getCurrentPageIndex()).append(",");
-		sb.append("\"previousPage\":").append(getPreviousPageIndex())
-				.append(",");
+		sb.append("{\"isSuc\":1,\"pagi\":{\"currPage\":").append(getCurrentPageIndex()).append(",");
+		sb.append("\"previousPage\":").append(getPreviousPageIndex()).append(",");
 		sb.append("\"nextPage\":").append(getNextPageIndex()).append(",");
 		sb.append("\"pages\":[");
 		int[] currentPageIndexes = getCurrentPageIndexes();
@@ -109,8 +109,7 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 			sb.append(currentPageIndexes[i]);
 		}
 		sb.append("],");
-		sb.append("\"hasPrevious5Page\":").append(hasPrevious5Pages())
-				.append(",");
+		sb.append("\"hasPrevious5Page\":").append(hasPrevious5Pages()).append(",");
 		sb.append("\"hasNext5Page\":").append(hasNext5Pages()).append(",");
 		sb.append("\"pageSize\":").append(getPageSize()).append(",");
 		sb.append("\"orderField\":\"").append(getOrderField()).append("\",");
@@ -119,8 +118,7 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 		else {
 			sb.append("\"orderType\":\"asc\",");
 		}
-		sb.append("\"previousPage\":").append(getPreviousPageIndex())
-				.append(",");
+		sb.append("\"previousPage\":").append(getPreviousPageIndex()).append(",");
 		sb.append("\"records\":").append(getTotalItemCount()).append(",");
 
 		sb.append("\"pageIndex\":").append(getCurrentPageIndex()).append(",");
@@ -132,10 +130,8 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 	// 封装成json 格式
 	public StringBuffer pageDescription(String rows) {
 		StringBuffer sb = new StringBuffer();
-		sb.append("{\"isSuc\":1,\"pagi\":{\"currPage\":")
-				.append(getCurrentPageIndex()).append(",");
-		sb.append("\"previousPage\":").append(getPreviousPageIndex())
-				.append(",");
+		sb.append("{\"isSuc\":1,\"pagi\":{\"currPage\":").append(getCurrentPageIndex()).append(",");
+		sb.append("\"previousPage\":").append(getPreviousPageIndex()).append(",");
 		sb.append("\"nextPage\":").append(getNextPageIndex()).append(",");
 		sb.append("\"pages\":[");
 		int[] currentPageIndexes = getCurrentPageIndexes();
@@ -146,8 +142,7 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 			sb.append(currentPageIndexes[i]);
 		}
 		sb.append("],");
-		sb.append("\"hasPrevious5Page\":").append(hasPrevious5Pages())
-				.append(",");
+		sb.append("\"hasPrevious5Page\":").append(hasPrevious5Pages()).append(",");
 		sb.append("\"hasNext5Page\":").append(hasNext5Pages()).append(",");
 		sb.append("\"pageSize\":").append(getPageSize()).append(",");
 		sb.append("\"orderField\":\"").append(getOrderField()).append("\",");
@@ -157,8 +152,7 @@ public class SortPagedList<T> extends SimplePagedList<T> implements
 		else {
 			sb.append("\"orderType\":\"asc\",");
 		}
-		sb.append("\"previousPage\":").append(getPreviousPageIndex())
-				.append(",");
+		sb.append("\"previousPage\":").append(getPreviousPageIndex()).append(",");
 		sb.append("\"records\":").append(getTotalItemCount()).append(",");
 		sb.append("\"pageIndex\":").append(getCurrentPageIndex()).append(",");
 		sb.append("\"total\":").append(getTotalPageCount()).append("},");

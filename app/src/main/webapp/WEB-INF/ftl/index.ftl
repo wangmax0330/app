@@ -22,15 +22,13 @@
 	<!--sidebarPage Begin-->
 	<@calendarMacro.sidebarPage contextPath=rc.contextPath/>
 	<!--sidebarPage Ends-->
-	
+	  <div class="alert_div">
+	    <h4 class="alert_info"><span>Welcome to the free MediaLoot admin panel template, this could be an informative message.</span></h4>
+	    <h4 class="alert_warning"><span>A Warning Alert</span></h4>
+	    <h4 class="alert_error"><span>An Error Message</span></h4>
+	    <h4 class="alert_success"><span>A Success Message</span></h4>
+       </div>
  <section id="main" class="column">
-        <h4 class="alert_info"><span>Welcome to the free MediaLoot admin panel template, this could be an informative message.</span></h4>
-        <h4 class="alert_warning"><span>A Warning Alert</span></h4>
-        <h4 class="alert_error"><span>An Error Message</span></h4>
-        <h4 class="alert_success"><span>A Success Message</span></h4>
-
-
-
         <article class="module width_full">
             <header>
                 <h3>Stats</h3></header>

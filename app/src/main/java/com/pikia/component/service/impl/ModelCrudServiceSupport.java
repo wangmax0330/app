@@ -81,7 +81,6 @@ public abstract class ModelCrudServiceSupport implements ModelCrudService {
 		for (Long id : idList) {
 			pagedModels.add(this.getModel(id));
 		}
-
 		pl.orderField(queryContext.getSortField())
 				.orderType(queryContext.getSortType())
 				.pageIndex(pageIndex)
@@ -92,6 +91,8 @@ public abstract class ModelCrudServiceSupport implements ModelCrudService {
 
 		return pl;
 	}
+
+	protected abstract Object getModel(Long id);
 
 	protected abstract ModelRepository getModelRepository();
 

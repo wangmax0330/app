@@ -18,8 +18,9 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 /**
  * Java 压缩图片工具类
+ * 
  * @author Methew
- *
+ * 
  */
 public class CompressPic {
 	private File file = null;

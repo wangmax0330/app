@@ -5,8 +5,7 @@ import java.util.List;
 import com.pikia.component.pagination.PaginationQueryContext;
 
 public abstract interface ModelCrudService extends ModelLister {
-
-	public abstract Object getModel(Long paramLong);
+	public abstract Object get(Long paramLong);
 
 	public abstract Object saveOrUpdate(Object paramObject);
 

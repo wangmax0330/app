@@ -90,6 +90,13 @@
 	</div>
 </div>
 </#macro>
-
-
+<!---->
+<#macro alertMessageDiv contextPath>
+	<div class="alert_div">
+	    <h4 class="alert_info"><span>Welcome to the free MediaLoot admin panel template, this could be an informative message.</span></h4>
+	    <h4 class="alert_warning"><span>A Warning Alert</span></h4>
+	    <h4 class="alert_error"><span>An Error Message</span></h4>
+	    <h4 class="alert_success"><span>A Success Message</span></h4>
+    </div>
+</#macro>
 <#macro imgPath>http://img.jdsao.com</#macro>
