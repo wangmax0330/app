@@ -4,11 +4,9 @@ $(function() {
 		console.info(hash);
 		if (hash) {
 			if ("#blog.blog-list" == hash) {
-				console.info("----blog-list--------");
 				tk.load(contextPath + '/d/page/blog.blog_list', '', tk.menuFocus,
 						[ $("#sidebar li a[href='#blog.blog-list']")[0] ]);
 			} else if ("#blog.blog-new" == hash) {
-				console.info("------blog-new------");
 				console.debug($("#sidebar  li a[href='#blog.blog-new']")[0]);
 				tk.load(contextPath + '/d/blog/editBlog/0', '', tk.menuFocus,
 						[ $("#sidebar li a[href='#blog.blog-new']")[0] ]);

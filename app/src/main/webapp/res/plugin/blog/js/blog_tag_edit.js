@@ -1,9 +1,7 @@
  $(".blog_tag").delegate(".del-dataSelector", "click", function(event) {
      var $this = $(this).closest("span");
      var data = [];
-     console.debug($this);
      var tag = $this.attr("did");
-     console.info(tag + "-------------");
      $.ajax({
          url: contextPath + "/a/tag/delTag",
          dataType: "json",
@@ -12,7 +10,6 @@
          },
          type: "post"
      }).done(function(data) {
-         console.info(data.isSuc == 1);
          if (data.isSuc == 1) {
              alert("删除成功");
              $this.remove();
@@ -20,14 +17,11 @@
              alert(data.msg);
          }
      });
-     console.debug(this);
-     console.debug($(this));
  });
  $(".blog_tag").delegate("#add_new_tag", "keydown", function(event) {
      var $this = $(this);
      var keyCode = event.which || event.keyCode;
      if (keyCode == 13) { //up
-         console.info("按键事件");
          var value = $this.val();
          if (value != '') {
              var _thisSibling = $(this).siblings("span[did='" + value + "']");

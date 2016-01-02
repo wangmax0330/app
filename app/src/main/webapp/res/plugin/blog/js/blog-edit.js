@@ -13,7 +13,6 @@ $("#blog_img_uploadify").uploadify({
 		fd : "filedataPic"
 	},
 	'onUploadSuccess' : function(fileObj, response, data) {
-		console.info(response);
 		var json = eval("(" + response + ")");
 		// alert(json.msg);
 		var $img = $("form#form-blog-edit .blog-detail-pic-img");
@@ -43,7 +42,6 @@ blog.tagIds = '';
 	editor = KindEditor.create('textarea[name="content"]', {
 		allowFileManager : true
 	});
-	console.debug(editor);
 
 	// ---------------------博客的表单处理
 	blog.init = function() {
@@ -66,7 +64,6 @@ blog.tagIds = '';
 		}
 		blog.id = $form.find("input[name='id']").val();
 		blog.content = editor.html();
-		console.info(blog.content);
 		return true;
 	};
 	// ----------------博客内容自动保存
