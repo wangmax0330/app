@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>图片预览</title>
-<script type="text/javascript" src="${rc.contextPath}/res/base/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="${rc.contextPath}/dev-lib/assets/js/jquery/jquery-1.8.2.min.js"></script>
 <script>
 var size = "${size}".split(",");
 var name = "${name}";

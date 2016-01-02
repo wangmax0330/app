@@ -26,16 +26,14 @@ public class SimpleController {
 	 * @return
 	 */
 	@SuppressWarnings("rawtypes")
-	@RequestMapping(value = { "/page/{ftl:.*}" }, method = {
-			RequestMethod.POST, RequestMethod.GET })
+	@RequestMapping(value = { "/page/{ftl:.*}" }, method = { RequestMethod.POST, RequestMethod.GET })
 	public String add(HttpServletRequest request, HttpServletResponse response,
 			@PathVariable("ftl") String ftl, ModelMap modelMap) {
 		Map paramMap = getParameterMap(request);
 		Iterator it = paramMap.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry entry = (Map.Entry) it.next();
-			request.setAttribute((String) entry.getKey(),
-					(String) entry.getValue() + "");
+			request.setAttribute((String) entry.getKey(), (String) entry.getValue() + "");
 		}
 		if (StringUtils.isNotBlank(ftl)) {
 			return "/" + ftl.replace(".", "/");

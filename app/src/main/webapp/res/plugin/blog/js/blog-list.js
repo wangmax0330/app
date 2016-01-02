@@ -47,7 +47,7 @@ $(function() {
 	});
 
 	
-	$blog_list_tbody.undelegate(".blog_del", "click").delegate(".blog_del", "click", function() {
+	$blog_list_tbody.undelegate("#blog_del", "click").delegate("#blog_del", "click", function() {
 		var $this = $(this);
 		var id = $this.attr("c-id");
 		if (confirm('确认对此地址进行删除操作？')) {

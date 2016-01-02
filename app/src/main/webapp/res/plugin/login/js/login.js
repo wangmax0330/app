@@ -147,7 +147,8 @@ $(function() {
                         });
                     }
                     // if (data.role == 1) {
-                    window.location = contextPath + "/d/page/index";
+                    //window.location = contextPath + "/d/page/index";
+                    window.location = contextPath + "/d/blog/index";
                     // }
                 } else {
                     submiBtn.powerFloat({

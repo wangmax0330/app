@@ -19,11 +19,11 @@ public class PaginationQueryContext {
 	public PaginationQueryContext(HttpServletRequest request) {
 
 		String pageIndexStr = request.getParameter("pageIndex");
-		this.pageIndex = (StringUtils.isNotBlank(pageIndexStr) ? new Integer(
-				pageIndexStr).intValue() : 1);
+		this.pageIndex = (StringUtils.isNotBlank(pageIndexStr) ? new Integer(pageIndexStr)
+				.intValue() : 1);
 		String pageSizeStr = request.getParameter("pageSize");
-		this.pageSize = (StringUtils.isNotBlank(pageSizeStr) ? new Integer(
-				pageSizeStr).intValue() : 20);
+		this.pageSize = (StringUtils.isNotBlank(pageSizeStr) ? new Integer(pageSizeStr).intValue()
+				: 20);
 		this.sortField = request.getParameter("sortField");
 		this.sortType = request.getParameter("sortType");
 		this.request = request;

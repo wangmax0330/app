@@ -2,12 +2,9 @@ package com.pikia.blog.domain;
 
 import java.util.Date;
 
-import org.apache.log4j.Logger;
-
 import com.pikia.component.base.BaseDomain;
 
 public class ApsUserDomain extends BaseDomain {
-	protected final Logger logger = Logger.getLogger(ApsUserDomain.class);
 	private String userName;
 	private String password;
 	private Integer role; // 角色权限
@@ -78,8 +75,6 @@ public class ApsUserDomain extends BaseDomain {
 		this.email = email;
 	}
 
-
-
 	public Date getBirthday() {
 		return birthday;
 	}
@@ -119,5 +114,5 @@ public class ApsUserDomain extends BaseDomain {
 	public void setPhoto(String photo) {
 		this.photo = photo;
 	}
-	
+
 }

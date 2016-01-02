@@ -16,26 +16,30 @@ import com.pikia.component.repository.ModelRepository;
 import com.pikia.component.service.impl.ModelCrudServiceSupport;
 
 @Service
-public class ApsUserServiceImpl extends ModelCrudServiceSupport implements ApsUserService {
+public class ApsUserServiceImpl extends ModelCrudServiceSupport implements
+		ApsUserService {
 	@Resource
 	private ApsUserRepository apsUserRepository;
 
 	@Override
-    // Propagation.REQUIRED 如果有事务,那么加入事务,没有的话新建一个(不写的情况下)
+	// Propagation.REQUIRED 如果有事务,那么加入事务,没有的话新建一个(不写的情况下)
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = true, rollbackFor = Exception.class)
 	public Object get(Long id) {
-		if (id == null || id.longValue() == 0) return null;
+		if (id == null || id.longValue() == 0)
+			return null;
 		return this.apsUserRepository.get(id);
 	}
 
 	@Override
 	@Transactional(propagation = Propagation.REQUIRED, readOnly = true, rollbackFor = Exception.class)
 	public Object getModel(Long id) {
-		if (id == null || id.longValue() == 0) return null;
-//		CmsRebateDomain domain = (CmsRebateDomain) modelContainer.getModel(
-//				ModelUtils.asModelKey(CmsRebateDomain.class, id), domainModelLoader, false);
-//		if (domain != null) domain.setInitialized(true);
-		ApsUserDomain domain=(ApsUserDomain) this.get(id);
+		if (id == null || id.longValue() == 0)
+			return null;
+		// CmsRebateDomain domain = (CmsRebateDomain) modelContainer.getModel(
+		// ModelUtils.asModelKey(CmsRebateDomain.class, id), domainModelLoader,
+		// false);
+		// if (domain != null) domain.setInitialized(true);
+		ApsUserDomain domain = (ApsUserDomain) this.get(id);
 		return domain;
 	}
 

@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController {
 	protected final Logger logger = Logger.getLogger(IndexController.class);
 
-	@RequestMapping(value = { "/index" }, method = { RequestMethod.POST, RequestMethod.GET })
-	public String index(HttpServletRequest request, HttpServletResponse response) {
-		return "/index";
-	}
 
 	@RequestMapping(value = { "/blog/index" }, method = { RequestMethod.POST, RequestMethod.GET })
 	public String blogIndex(HttpServletRequest request, HttpServletResponse response) {
-		return "/plugin/blog/index";
+		
+		return "/blog/index";
 	}
 }

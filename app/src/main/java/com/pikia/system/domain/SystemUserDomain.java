@@ -22,6 +22,7 @@ public class SystemUserDomain extends BaseDomain {
 	}
 
 	public boolean isAdmin() {
+		if (this.role!=null)
 		if (this.role == 1) return true;
 		return false;
 	}

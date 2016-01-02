@@ -22,6 +22,7 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
  * @author Methew
  * 
  */
+@SuppressWarnings("restriction")
 public class CompressPic {
 	private File file = null;
 	private String inputDir;
@@ -76,19 +77,17 @@ public class CompressPic {
 				this.logger.error("file [" + inputFileName + "] do not exist to compress!");
 				return null;
 			}
-			Image img = ImageIO.read(file);
 
+			if (outputFileName.toLowerCase().endsWith(".gif")) {
+				map.put("outputWidth", null + "");
+				map.put("outputHeight", null + "");
+				map.put("name", inputFileName);
+				return map;
+			}
+			Image img = ImageIO.read(file);
 			if (img.getWidth(null) == -1) {
 				this.logger.error("file [" + inputFileName + "] is not allowed file to compress!");
 				return null;
-			}
-
-			if (outputFileName.toLowerCase().endsWith(".gif")) {
-				map.put("outputWidth", img.getWidth(null) + "");
-				map.put("outputHeight", img.getHeight(null) + "");
-				map.put("name", inputFileName);
-
-				return map;
 			}
 			int newHeight;
 			int newWidth;

@@ -2,8 +2,16 @@ package com.pikia.component.web.util;
 
 import java.util.Random;
 
+/**
+ * 
+ * @author Methew
+ * 
+ */
 public class CharUtil {
-
+	// 1、其中48～57为0到9十个阿拉伯数字；
+	// 2、65～90为26个大写英文字母；
+	// 3、97～122号为26个小写英文字母。
+	
 	public static String getTaskCode(String str) {
 		Random rand = new Random();
 		if (str.length() == 1) {
@@ -59,6 +67,7 @@ public class CharUtil {
 
 	/**
 	 * 判断输入char类型变量的字符类型
+	 * 
 	 * @param c
 	 *            char类型变量
 	 * @return CharType 字符类型

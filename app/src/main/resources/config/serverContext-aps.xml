@@ -17,4 +17,9 @@
 		<property name="mapperInterface" value="com.pikia.blog.repository.ApsUserRepository" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+	<bean id="apsTagRepository " class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.pikia.blog.repository.ApsTagRepository" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+
 </beans>

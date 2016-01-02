@@ -13,8 +13,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 import com.pikia.component.controller.ModelCrudOperator;
+import com.pikia.component.web.service.SessionService;
 import com.pikia.component.web.util.ResponseUtils;
-import com.pikia.system.service.SessionService;
 
 public abstract class ModelCrudControllerSupport extends ModelCrudOperator implements
 		ApplicationContextAware {

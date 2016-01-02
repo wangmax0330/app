@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.pikia.component.service.ModelCrudService;
 import com.pikia.component.web.controller.ModelCrudControllerSupport;
+import com.pikia.component.web.service.SystemUserService;
 import com.pikia.component.web.util.MD5Util;
 import com.pikia.component.web.util.ResponseUtils;
 import com.pikia.system.domain.SystemUserDomain;
-import com.pikia.system.service.SystemUserService;
 
 @Controller
 public class SystemUserController extends ModelCrudControllerSupport {

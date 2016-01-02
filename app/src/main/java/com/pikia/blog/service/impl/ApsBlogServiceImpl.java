@@ -1,6 +1,7 @@
 package com.pikia.blog.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 
 import com.pikia.blog.domain.ApsBlogDomain;
-import com.pikia.blog.domain.ApsUserDomain;
+import com.pikia.blog.domain.DateTag;
 import com.pikia.blog.repository.ApsBlogRepository;
 import com.pikia.blog.service.ApsBlogService;
 import com.pikia.component.pagination.PaginationQueryContext;
@@ -28,13 +29,15 @@ public class ApsBlogServiceImpl extends ModelCrudServiceSupport implements ApsBl
 
 	@Override
 	public Object get(Long id) {
-		if (id == null || id.longValue() == 0) return null;
+		if (id == null || id.longValue() == 0)
+			return null;
 		return this.apsBlogRepository.get(id);
 	}
 
 	@Override
 	public Object getModel(Long id) {
-		if (id == null || id.longValue() == 0) return null;
+		if (id == null || id.longValue() == 0)
+			return null;
 		// CmsRebateDomain domain = (CmsRebateDomain) modelContainer.getModel(
 		// ModelUtils.asModelKey(CmsRebateDomain.class, id), domainModelLoader,
 		// false);
@@ -90,7 +93,9 @@ public class ApsBlogServiceImpl extends ModelCrudServiceSupport implements ApsBl
 	public int getTotalCount(PaginationQueryContext queryContext) {
 		String startDate = queryContext.getRequest().getParameter("startDate");
 		String endDate = queryContext.getRequest().getParameter("endDate");
-		return apsBlogRepository.getTotalCount(startDate, endDate);
+		String tag = queryContext.getRequest().getParameter("tag");
+		String month = queryContext.getRequest().getParameter("month");
+		return apsBlogRepository.getTotalCount(startDate, endDate, tag,month);
 	}
 
 	@Override
@@ -115,8 +120,11 @@ public class ApsBlogServiceImpl extends ModelCrudServiceSupport implements ApsBl
 			jsonMap.put("createTime",
 					DateUtils.date2Str(tmp.getCreateTime(), DateUtils.DEFAULT_TIMESTAMP_PATTERN));
 			jsonMap.put("title", tmp.getTitle());
-			jsonMap.put("content", tmp.getContent());
+			// 内容不需要传过去了
+			// jsonMap.put("content", tmp.getContent());
 			// jsonMap.put("isPublish", tmp.isPublish());
+			jsonMap.put("viewNum", tmp.getViewNum());
+			jsonMap.put("publishState", tmp.getPublishState());
 			jsonMap.put("version", tmp.getVersion());
 			if (tmp.getModifyTimes() > 0) {
 				jsonMap.put("modifyTimes", tmp.getModifyTimes());
@@ -135,6 +143,27 @@ public class ApsBlogServiceImpl extends ModelCrudServiceSupport implements ApsBl
 	public Object getBlogVersionModel(Long id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public List<ApsBlogDomain> getBlogForWeb(String month, String tag, int startIndex, int pageSize) {
+		List<Long> idList = this.apsBlogRepository.getBlogForWeb(month, tag, startIndex, pageSize);
+		List<ApsBlogDomain> domainList = new ArrayList<ApsBlogDomain>();
+		for (Long id : idList) {
+			ApsBlogDomain domain = this.apsBlogRepository.get(id);
+			// 不往前台传完整的博客信息
+			domain.setContent(null);
+			domainList.add(domain);
+		}
+		return domainList;
+	}
+
+	public List<DateTag> getDateForWeb() {
+		List<DateTag> dateLis = new ArrayList<DateTag>();
+		List<Map> mapLis = this.apsBlogRepository.getDateForWeb();
+		for (Map map : mapLis) {
+			dateLis.add(new DateTag((String) map.get("date"), (Long) map.get("num")));
+		}
+		return dateLis;
 	}
 
 }
