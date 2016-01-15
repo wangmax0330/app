@@ -38,7 +38,7 @@
             <h1 class="blog-title"></h1>
         </div>
         <div class="row">
-            <div class="col-sm-8 blog-main">
+            <div class="col-sm-12 blog-main">
             	<div>
 					<#if blogDomain??>
 		                <!-- /.blog-post -->
@@ -57,30 +57,6 @@
                 </nav>
             </div>
             <!-- /.blog-main -->
-            <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-                <@webMacro.webPersonDesc/>
-                
-                 <div class="sidebar-module">
-                    <h4>日期归档</h4>
-                    <ol class="list-unstyled" id="blog_date_side_tbody">
-                       
-                    </ol>
-                </div>
-                <div class="sidebar-module">
-                    <h4>标签云</h4>
-                    <ol class="list-unstyled" id="blog_tag_side_tbody">
-                       
-                       
-                    </ol>
-                </div>
-                <div class="sidebar-module">
-                    <h4>Elsewhere</h4>
-                    <ol class="list-unstyled">
-                        <li><a href="#">GitHub</a></li>
-                    </ol>
-                </div>
-            </div>
-            <!-- /.blog-sidebar -->
         </div>
         <!-- /.row -->
     </div>
